@@ -12,9 +12,8 @@ const NewsIndex = () => {
 		dispatch({ type: "SET_NEWS_FEED", payload: articles });
 	};
 
-	useEffect(() => {
-		fetchNews();
-	}, []);
+  useEffect(fetchNews, []);
+  
 	let articlesDisplay = articles.map((article) => {
 		return <NewsCard article={article} />;
 	});
