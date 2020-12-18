@@ -1,15 +1,15 @@
 import React from 'react'
 import { Header, Card } from 'semantic-ui-react'
 
-const NewsCard = (props) => {
+const NewsCard = (article) => {
   return (
     <Card
       data-cy="news-card"
-      image={props.urlToImage}
-      header={props.title}
-      meta={`By: ${props.author} at ${props.source}`}
-      description={props.description}
-      extra={<Header as='h6'>{`Published at ${props.publishedAt}`}</Header>}
+      image={article.urlToImage}
+      header={article.title}
+      meta={`By: ${article.author} at ${article.source}`}
+      description={article.description}
+      extra={<Header as='h6'>{`Published at ${article.publishedAt}`}</Header>}
     />
   )
 }
