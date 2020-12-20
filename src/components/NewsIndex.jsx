@@ -10,9 +10,18 @@ const NewsIndex = () => {
   const fetchNews = async () => {
     let articles = await NewsService.index();
     dispatch({ type: "SET_NEWS_FEED", payload: articles });
+	};
+	
+	const specificNews = useSelector((state) => state.specificNews);
+  const fetchArticles = async () => {
+		let articles = await NewsService.search();
+		debugger
+    dispatch({ type: "SEARCH_NEWS", payload: articles });
   };
 
-	const specificNews = useSelector((state) => state.specificNews);
+  useEffect(fetchArticles, []);
+
+  // const specificNews = useSelector((state) => state.specificNews);
 
   useEffect(fetchNews, []);
 
@@ -22,7 +31,7 @@ const NewsIndex = () => {
   return (
     <>
       <Card.Group itemsPerRow={5}>{articlesDisplay}</Card.Group>
-      {specificNews}
+      {/* {specificNews} */}
     </>
   );
 };
