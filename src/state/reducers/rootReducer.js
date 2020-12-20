@@ -8,6 +8,7 @@ const rootReducer = (state = initialState, action) => {
       };
 
     case "SEARCH_NEWS":
+      debugger
       return {
         ...state,
         specificNews: action.payload,
