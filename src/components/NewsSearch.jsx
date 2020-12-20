@@ -14,6 +14,7 @@ const NewsSearch = () => {
           onChange={(event) => setPerformSearch(event.target.value)}
         />
         <Button 
+          data-cy='search_button'
           type="submit"
           value="Submit"
           onClick={() => dispatch({type: "SEARCH_NEWS", payload: performSearch})}

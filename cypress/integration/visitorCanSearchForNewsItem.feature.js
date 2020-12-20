@@ -8,7 +8,7 @@ describe("visitor can search for news item", () => {
     })
     cy.visit("/")
     cy.get("[data-cy='search_input']").type("bitcoin")
-    cy.get("[data-cy='search_input']").click()
+    cy.get("[data-cy='search_button']").click()
   })
 
   it("is expected to display search results", () => {
