@@ -13,14 +13,7 @@ const NewsIndex = () => {
   };
   
   useEffect(fetchNews, []);
-	
-	const specificNews = useSelector((state) => state.specificNews);
-  const fetchArticles = async () => {
-		let specificNews = await NewsService.search();
-    dispatch({ type: "SEARCH_NEWS", payload: specificNews });
-  };
 
-  useEffect(fetchArticles, []);
 
   // const specificNews = useSelector((state) => state.specificNews);
 
