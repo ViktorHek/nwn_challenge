@@ -10,7 +10,7 @@ const rootReducer = (state = initialState, action) => {
     case "SEARCH_NEWS":
       return {
         ...state,
-        specificNews: action.payload,
+        searchArticle: action.payload,
       };
 
     default:

@@ -14,16 +14,20 @@ const NewsIndex = () => {
   
   useEffect(fetchNews, []);
 
-
-  // const specificNews = useSelector((state) => state.specificNews);
-
   let articlesDisplay = articles.map((article) => {
     return <NewsCard article={article} />;
   });
+
+  // const searchResult = useSelector((state) => state.specificNews);
+
+  // let searchResult = specificNews.map((article) => {
+  //   return <NewsCard article={article} />;
+  // });
+  
   return (
     <>
       <Card.Group itemsPerRow={5}>{articlesDisplay}</Card.Group>
-      {/* {specificNews} */}
+      {/* {searchResult} */}
     </>
   );
 };

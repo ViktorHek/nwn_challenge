@@ -5,11 +5,10 @@ import { Input, Button } from "semantic-ui-react";
 
 const NewsSearch = () => {
   const dispatch = useDispatch();
-  const [performSearch, setPerformSearch] = useState("");
-	const specificNews = useSelector((state) => state.specificNews);
+  const [inputValue, setInputValue] = useState("");
+	const specificNews = useSelector((state) => state.searchArticle);
   const fetchArticles = async () => {
-    let specificNews = await NewsService.search(performSearch);
-    debugger
+    let specificNews = await NewsService.search(inputValue);
     dispatch({ type: "SEARCH_NEWS", payload: specificNews });
   };
 
@@ -20,7 +19,7 @@ const NewsSearch = () => {
       <Input
         placeholder="Search..."
         data-cy="search_input"
-        onChange={(event) => setPerformSearch(event.target.value)}
+        onChange={(event) => setInputValue(event.target.value)}
       />
       <Button
         data-cy="search_button"
