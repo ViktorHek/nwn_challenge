@@ -5,7 +5,7 @@ import { Input } from "semantic-ui-react";
 
 const NewsSearch = () => {
   const dispatch = useDispatch();
-  const [inputValue, setInputValue] = useState([]);
+  const [inputValue, setInputValue] = useState();
   const fetchArticles = async () => {
     let specificNews = await NewsService.search(inputValue);
     dispatch({ type: "SEARCH_NEWS", payload: specificNews });

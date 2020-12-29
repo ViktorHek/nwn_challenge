@@ -25,11 +25,8 @@ const NewsIndex = () => {
 
   return (
     <div data-cy="news-index">
-      {searchResults ? (
-        <Card.Group itemsPerRow={5}>{searchResults}</Card.Group>
-      ) : (
-        <Card.Group itemsPerRow={5}>{articlesDisplay}</Card.Group>
-      )}
+      {searchResult && <Card.Group itemsPerRow={5}>{searchResults}</Card.Group>}
+      <Card.Group itemsPerRow={5}>{articlesDisplay}</Card.Group>
     </div>
   );
 };
