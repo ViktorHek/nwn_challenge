@@ -11,24 +11,32 @@ const NewsIndex = () => {
     let articles = await NewsService.index();
     dispatch({ type: "SET_NEWS_FEED", payload: articles });
   };
-  
+
   useEffect(fetchNews, []);
 
   let articlesDisplay = articles.map((article) => {
     return <NewsCard article={article} />;
   });
 
-  // const searchResult = useSelector((state) => state.specificNews);
+  // const searchResult = useSelector((state) => state.searchArticle);
+  // debugger
 
   // let searchResult = specificNews.map((article) => {
   //   return <NewsCard article={article} />;
   // });
-  
+
+  const searchResult = useSelector((state) => state.searchArticle);
+  debugger;
+
+  let searchResults = searchResult.map((article) => {
+    return <NewsCard article={article} />;
+  });
+
   return (
-    <>
+    <div data-cy='search_result'>
       <Card.Group itemsPerRow={5}>{articlesDisplay}</Card.Group>
-      {/* {searchResult} */}
-    </>
+      {searchResults}
+    </div>
   );
 };
 
