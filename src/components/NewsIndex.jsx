@@ -18,24 +18,18 @@ const NewsIndex = () => {
     return <NewsCard article={article} />;
   });
 
-  // const searchResult = useSelector((state) => state.searchArticle);
-  // debugger
-
-  // let searchResult = specificNews.map((article) => {
-  //   return <NewsCard article={article} />;
-  // });
-
   const searchResult = useSelector((state) => state.searchArticle);
-  debugger;
-
   let searchResults = searchResult.map((article) => {
     return <NewsCard article={article} />;
   });
 
   return (
-    <div data-cy='search_result'>
-      <Card.Group itemsPerRow={5}>{articlesDisplay}</Card.Group>
-      {searchResults}
+    <div data-cy="news-index">
+      {searchResults ? (
+        <Card.Group itemsPerRow={5}>{searchResults}</Card.Group>
+      ) : (
+        <Card.Group itemsPerRow={5}>{articlesDisplay}</Card.Group>
+      )}
     </div>
   );
 };
