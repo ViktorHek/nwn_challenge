@@ -1,5 +1,5 @@
-describe("A visitor can,", () => {
-		it("successfully see list of news", () => {
+describe("A visitor can see list of news", () => {
+		it("is expected to show list of news", () => {
 			cy.visit("/")
 			cy.get("[data-cy='news-index']").within(() => {
 				cy.get(".header").should("exist");
